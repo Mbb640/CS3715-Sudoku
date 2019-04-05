@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<link rel="stylesheet" href="style.css">
+			<style>
+					table {
+						border-collapse: collapse;
+						width: 500px;
+						height: 500px;   
+					}
+					colgroup {
+						border: solid medium;
+					}
+					table, td, tr{
+					   border: 0.5px solid darkgray; 
+					   text-align: center;
+					   vertical-align: center;
+					}
+					tr:nth-child(3) {
+						border-bottom: solid medium;
+					}
+					tr:nth-child(7) {
+						border-top: solid medium;
+					}
+					td {
+						align-content: center;
+					}
+					.box {
+						text-align: center;
+						border: none;
+						outline: none;
+					}
+					
+				</style>
+	</head>
+	
+	<body onload='authLoad()'>
+		<div align="center" class=".div_class">
+			<table id="td_sudoku">
+					<h1>Enjoy the Game!</h1>
+					<p class="p">Every Sudoku has a unique solution that can be reached logically. Enter numbers into the
+						 blank spaces so that each row, column and 3x3 box contains the numbers 1 to 9. For more 
+						 help, visit the <a href="http://www.websudoku.com/tutorials/">Tutorials page.</a></p>
+					<colgroup><col><col><col>
+					<colgroup><col><col><col>
+					<colgroup><col><col><col>
+					
+						<tr> 
+							<td><input class="box" type="text" size="1" id="puz00"></td> 
+							<td><input class="box" type="text" size="1" id="puz01"></td> 
+							<td><input class="box" type="text" size="1" id="puz02"></td>   
+							<td><input class="box" type="text" size="1" id="puz03"></td> 
+							<td><input class="box" type="text" size="1" id="puz04"></td> 
+							<td><input class="box" type="text" size="1" id="puz05"></td>   
+							<td><input class="box" type="text" size="1" id="puz06"></td> 
+							<td><input class="box" type="text" size="1" id="puz07"></td> 
+							<td><input class="box" type="text" size="1" id="puz08"></td> 
+						</tr>
+						<tr> 
+							<td><input class="box" type="text" size="1" id="puz10"></td> 
+							<td><input class="box" type="text" size="1" id="puz11"></td> 
+							<td><input class="box" type="text" size="1" id="puz12"></td>   
+							<td><input class="box" type="text" size="1" id="puz13"></td> 
+							<td><input class="box" type="text" size="1" id="puz14"></td> 
+							<td><input class="box" type="text" size="1" id="puz15"></td>   
+							<td><input class="box" type="text" size="1" id="puz16"></td> 
+							<td><input class="box" type="text" size="1" id="puz17"></td> 
+							<td><input class="box" type="text" size="1" id="puz18"></td> 
+						</tr>
+						<tr> 
+							<td><input class="box" type="text" size="1" id="puz20"></td> 
+							<td><input class="box" type="text" size="1" id="puz21"></td> 
+							<td><input class="box" type="text" size="1" id="puz22"></td>   
+							<td><input class="box" type="text" size="1" id="puz23"></td> 
+							<td><input class="box" type="text" size="1" id="puz24"></td> 
+							<td><input class="box" type="text" size="1" id="puz25"></td>   
+							<td><input class="box" type="text" size="1" id="puz26"></td> 
+							<td><input class="box" type="text" size="1" id="puz27"></td> 
+							<td><input class="box" type="text" size="1" id="puz28"></td> 
+						</tr>
+					
+						<tr> 
+							<td><input class="box" type="text" size="1" id="puz30"></td> 
+							<td><input class="box" type="text" size="1" id="puz31"></td> 
+							<td><input class="box" type="text" size="1" id="puz32"></td>   
+							<td><input class="box" type="text" size="1" id="puz33"></td> 
+							<td><input class="box" type="text" size="1" id="puz34"></td> 
+							<td><input class="box" type="text" size="1" id="puz35"></td>   
+							<td><input class="box" type="text" size="1" id="puz36"></td> 
+							<td><input class="box" type="text" size="1" id="puz37"></td> 
+							<td><input class="box" type="text" size="1" id="puz38"></td> 
+						</tr>
+						<tr> 
+							<td><input class="box" type="text" size="1" id="puz40"></td> 
+							<td><input class="box" type="text" size="1" id="puz41"></td> 
+							<td><input class="box" type="text" size="1" id="puz42"></td>   
+							<td><input class="box" type="text" size="1" id="puz43"></td> 
+							<td><input class="box" type="text" size="1" id="puz44"></td> 
+							<td><input class="box" type="text" size="1" id="puz45"></td>   
+							<td><input class="box" type="text" size="1" id="puz46"></td> 
+							<td><input class="box" type="text" size="1" id="puz47"></td> 
+							<td><input class="box" type="text" size="1" id="puz48"></td> 
+						</tr>
+						<tr> 
+							<td><input class="box" type="text" size="1" id="puz50"></td> 
+							<td><input class="box" type="text" size="1" id="puz51"></td> 
+							<td><input class="box" type="text" size="1" id="puz52"></td>   
+							<td><input class="box" type="text" size="1" id="puz53"></td> 
+							<td><input class="box" type="text" size="1" id="puz54"></td> 
+							<td><input class="box" type="text" size="1" id="puz55"></td>   
+							<td><input class="box" type="text" size="1" id="puz56"></td> 
+							<td><input class="box" type="text" size="1" id="puz57"></td> 
+							<td><input class="box" type="text" size="1" id="puz58"></td> 
+						</tr>
+					
+						<tr> 
+							<td><input class="box" type="text" size="1" id="puz60"></td> 
+							<td><input class="box" type="text" size="1" id="puz61"></td> 
+							<td><input class="box" type="text" size="1" id="puz62"></td>   
+							<td><input class="box" type="text" size="1" id="puz63"></td> 
+							<td><input class="box" type="text" size="1" id="puz64"></td> 
+							<td><input class="box" type="text" size="1" id="puz65"></td>   
+							<td><input class="box" type="text" size="1" id="puz66"></td> 
+							<td><input class="box" type="text" size="1" id="puz67"></td> 
+							<td><input class="box" type="text" size="1" id="puz68"></td> 
+						</tr>
+						<tr> 
+							<td><input class="box" type="text" size="1" id="puz70"></td> 
+							<td><input class="box" type="text" size="1" id="puz71"></td> 
+							<td><input class="box" type="text" size="1" id="puz72"></td>   
+							<td><input class="box" type="text" size="1" id="puz73"></td> 
+							<td><input class="box" type="text" size="1" id="puz74"></td> 
+							<td><input class="box" type="text" size="1" id="puz75"></td>   
+							<td><input class="box" type="text" size="1" id="puz76"></td> 
+							<td><input class="box" type="text" size="1" id="puz77"></td> 
+							<td><input class="box" type="text" size="1" id="puz78"></td> 
+						</tr>
+						<tr> 
+							<td><input class="box" type="text" size="1" id="puz80"></td> 
+							<td><input class="box" type="text" size="1" id="puz81"></td> 
+							<td><input class="box" type="text" size="1" id="puz82"></td>   
+							<td><input class="box" type="text" size="1" id="puz83"></td> 
+							<td><input class="box" type="text" size="1" id="puz84"></td> 
+							<td><input class="box" type="text" size="1" id="puz85"></td>   
+							<td><input class="box" type="text" size="1" id="puz86"></td> 
+							<td><input class="box" type="text" size="1" id="puz87"></td> 
+							<td><input class="box" type="text" size="1" id="puz88"></td> 
+						</tr>
+				</table>
+		<script>
+			var pString;
+			sessionStorage.setItem('isLogged', false);
+			sessionStorage.setItem('userName', '');
+			//To determine whether the user has an account stored in session
+			function authLoad(){
+				var authReq=new XMLHttpRequest();
+				authReq.onreadystatechange=function(){
+					if(authReq.readyState==4){
+						if(authReq.responseText==''){
+							sessionStorage.setItem('isLogged', false);
+							console.log("Not logged");
+							redoButtons();
+						}
+						else{
+							console.log("Is logged")
+							console.log(authReq.responseText);
+							sessionStorage.setItem("isLogged", true);
+							sessionStorage.setItem("userName", authReq.responseText);
+							redoButtons();
+						}
+					}
+				}
+				authReq.open('GET', 'auth.php', true);
+				authReq.send(null);
+				
+			}
+			//To determine whether the user has an account stored in session
+			var puz=document.getElementById("puz");
+			var sArray=[];
+			var req=new XMLHttpRequest();
+			var url="sudoku_handler.php"
+			req.open('POST', url, true);
+			req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+			req.onreadystatechange=function(){
+				if(req.readyState!=4) return;
+				if((req.status==200||req.status==400)){
+					sArray = JSON.parse(req.responseText);
+	
+					//Have to remove some entries so that the remaining entries are spread out
+					var puzArray=[];
+					for(i=0;i<9;i++){
+						puzArray[i]=[];
+						//Creates 3 random numbers between 0 and 8 to be the puzzle entries kept.
+						//Math.floor will always round down, so we multiply by 9.
+						var rand1=Math.floor(Math.random()*(9))
+						var rand2=Math.floor(Math.random()*(9))
+						var rand3=Math.floor(Math.random()*(9))
+						//To be certain that we are getting the proper amount of values, 
+						//will generate random values until all 3 are different.
+						while((rand1==rand2)||(rand1==rand3)||(rand2==rand3)){
+							var rand1=Math.floor(Math.random()*(9))
+							var rand2=Math.floor(Math.random()*(9))
+							var rand3=Math.floor(Math.random()*(9))
+						}
+						//adding only the chosen values to an array that will be used to create the puzzle.
+						for(j=0;j<9;j++){
+							if((j==rand1)||(j==rand2)||(j==rand3)){
+								document.getElementById("puz"+i+j).value=sArray[i][j];
+								
+								
+							}
+						}
+					}
+				}
+			};
+			req.send(null);
+			var onSubmit=function(){
+				var scoreChange=0;
+				//for each correct element, add to score and change background to green.
+				//for each incorrect element, take away from score and change background to red.
+				for(i=0;i<9;i++){
+					for(j=0;j<9;j++){
+						if(document.getElementById("puz"+i+j).value!=undefined){
+							if(sArray[i][j]==document.getElementById("puz"+i+j).value){
+								document.getElementById("puz"+i+j).style.background="CornflowerBlue ";
+								scoreChange+=10;
+							}
+							else{
+								document.getElementById("puz"+i+j).style.background="LightCoral ";
+								scoreChange-=5;
+							}
+						}
+						else{
+							scorechange-=5;
+						}
+					}
+				}
+				document.getElementById("gameScore").innerHTML = scoreChange;
+				if(sessionStorage.getItem("isLogged")=='true'){
+					var sendScore=new XMLHttpRequest();
+					sendScore.open('POST', 'score.php', true);
+					sendScore.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+					sendScore.onreadystatechange=function(){
+						if(sendScore.readyState==4){
+						}
+					};
+					sendScore.send("score="+scoreChange);
+					makeScore();
+				}
+			}
+			var saveGame=function(){
+				if(sessionStorage.getItem("isLogged")=='true'){
+					var saveString='';
+					for(i=0;i<9;i++){
+						for(j=0;j<9;j++){
+							if(document.getElementById("puz"+i+j).value!=''){
+								saveString=saveString+document.getElementById("puz"+i+j).value;
+							}
+							else{
+								saveString=saveString+0;
+							}
+						}
+					}
+					var saveReq=new XMLHttpRequest();
+					saveReq.open("POST", "savegame.php", true); 
+					saveReq.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+					saveReq.onreadystatechange=function(){
+						if(saveReq.readyState==4){
+						}
+					};
+					console.log(saveString);
+					saveReq.send('saveString='+saveString);
+				}
+			}
+			var resumeGame=function(){
+				var curr=-1;
+				var hasSave=true;
+				var resReq=new XMLHttpRequest();
+				resReq.open("GET", "resumegame.php", true); 
+				resReq.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				resReq.onreadystatechange=function(){
+					if(resReq.readyState==4){
+						if(resReq.status==200||resReq.status==400){
+							console.log(typeof resReq.responseText);
+							pString=resReq.responseText;
+							console.log(pString)
+							if(pString==0){
+								hasSave=false;
+								alert("No save found, generating random puzzle");
+								resetPuzzle();
+							}
+							if(hasSave){
+								for(i=0;i<9;i++){
+									for(j=0;j<9;j++){
+										curr++;
+										if(resReq.responseText.charAt(curr)!='0'){
+											document.getElementById("puz"+i+j).value=parseInt(resReq.responseText.charAt(curr));
+										}
+										else{
+											document.getElementById("puz"+i+j).value="";
+										}
+										
+									}
+								}
+							}
+						}
+					}
+				};
+				resReq.send(null);
+				
+			}
+			var resetPuzzle=function(){
+				//Much the same as initial creation, changes being changing the values in the table
+				//rather than creating a new table.
+				var res=new XMLHttpRequest();
+				res.open('POST', "sudoku_handler.php", true);
+				res.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				res.onreadystatechange=function(){
+				if(res.readyState!=4) return;
+				if((res.status==200||res.status==400))
+					var rArray=JSON.parse(res.responseText);
+					sArray=rArray;
+					//Have to remove some entries so that the remaining entries are spread out
+					var puzArray=[];
+					for(i=0;i<9;i++){
+						puzArray[i]=[];
+						//Creates 3 random numbers between 0 and 8 to be the puzzle entries kept.
+						//Math.floor will always round down, so we multiply by 9.
+						var rand1=Math.floor(Math.random()*(9))
+						var rand2=Math.floor(Math.random()*(9))
+						var rand3=Math.floor(Math.random()*(9))
+						//To be certain that we are getting the proper amount of values, 
+						//will generate random values until all 3 are different.
+						while((rand1==rand2)||(rand1==rand3)||(rand2==rand3)){
+							var rand1=Math.floor(Math.random()*(9))
+							var rand2=Math.floor(Math.random()*(9))
+							var rand3=Math.floor(Math.random()*(9))
+						}
+						//adding only the chosen values to an array that will be used to create the puzzle.
+						for(j=0;j<9;j++){
+							if((j==rand1)||(j==rand2)||(j==rand3)){
+								document.getElementById("puz"+i+j).value=rArray[i][j];
+							}else{
+								document.getElementById("puz"+i+j).value='';
+							}
+						}
+					}
+				};
+				for(i=0;i<9;i++){
+					for(j=0;j<9;j++){
+						document.getElementById("puz"+i+j).style.background="white";
+					}
+				}
+				res.send(null);
+			}
+			var logOut=function(){
+				var logoutReq=new XMLHttpRequest();
+				logoutReq.onreadystatechange=function(){
+					if(logoutReq.readyState==4){
+						if(logoutReq.responseText==''){
+							sessionStorage.setItem('isLogged', 'false');
+							window.location.reload();
+						}
+						else{
+							
+						}
+					}
+				}
+				logoutReq.open('GET', 'logout.php', true);
+				logoutReq.send(null);
+				redoButtons();
+			}
+			var redoButtons=function(){
+				console.log(sessionStorage.getItem("isLogged"));
+				if(sessionStorage.getItem("isLogged")=='true'){
+					console.log("executes");
+				document.getElementById("save").style.visibility="visible";
+				document.getElementById("resume").style.visibility="visible";
+				document.getElementById("logout").style.visibility="visible";
+				}else{
+				document.getElementById("save").style.visibility="hidden";
+				document.getElementById("resume").style.visibility="hidden";
+				document.getElementById("logout").style.visibility="hidden";
+				}
+			}
+		</script>
+		</table><!-- t
+		<table border='1' style="width:200px;">
+			<script>
+				var scoreReq=new XMLHttpRequest();
+				scoreReq.open('GET', url, true);
+				scoreReq.onreadystatechange=function(){
+					if(scoreReq.readyState==4){
+					}
+				};
+				scoreReq.send(null);
+				var scoreArray=scoreReq.responseText;
+				//Todo based on what the scores are passed as
+			</script>-->
+		</table>
+		<br>
+		<button class="button" onclick="onSubmit()">Submit</button>
+		<button class="button" onclick="resetPuzzle()">Reset</button>
+		<br>
+		<button class="button" style="visibility:hidden" id='save' onclick='saveGame()' >Save Game</button>
+		<button class="button" style="visibility:hidden" id='resume' onclick='resumeGame()'>Resume Game</button><br>
+		<button class="button" style="visibility:hidden" id='logout' onclick='logOut()'>Log Out</button><br>
+		<a class="a" href="login.html">
+		<button class="button"  id='login' >Log In</button>
+		</a><br>
+		<span>Game Score: </span> <span id="gameScore"></span>
+			<div class="div_class" id="scoreTable"></div>
+		<script>
+				var makeScore=function(){
+					var scoreArray;
+					var getScore=new XMLHttpRequest();
+					getScore.open('GET', 'highscore.php', true);
+					getScore.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+					getScore.onreadystatechange=function(){
+						if(getScore.readyState==4){
+							scoreArray=JSON.parse(getScore.responseText);
+							console.log(scoreArray);
+							document.getElementById("scoreTable").innerHTML="";
+							for(a in scoreArray){
+								var addString="<p>"+a+": "+scoreArray[a]+"</p>";
+								document.getElementById("scoreTable").innerHTML=document.getElementById("scoreTable").innerHTML+addString;
+							}
+						}
+					}
+					getScore.send(null)
+				}
+			//Detects if user is logged in. If logged, user has options to save and resume game.
+			//If not logged in, buttons are not created.
+			if(sessionStorage.getItem("isLogged") == 'true'){
+				document.getElementById("save").style.visibility="visible";
+				document.getElementById("resume").style.visibility="visible";
+				document.getElementById("logout").style.visibility="visible";
+			}else{
+				document.getElementById("save").style.visibility="hidden";
+				document.getElementById("resume").style.visibility="hidden";
+				document.getElementById("logout").style.visibility="hidden";
+			}
+			makeScore();
+		</script>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+.div_class {
+    align-content: center;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0 auto;
+}
+
+.button {
+    background-color: darkslategray; 
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.input {
+    width: 50%;
+    padding: 10px 24px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    outline-color: darkslategray;
+}
+
+h1 {
+    font-size: 50px;
+    color: darkslategray;
+}
+
+h2 {
+    font-size: 25px;
+    color: darkslategray;
+}
+
+.a {
+    color: darkslategray;
+}
+
+.a:hover {
+    color: blue;
+}
+
+.p {
+    width: 50%;
+}
+
+

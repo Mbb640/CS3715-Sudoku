@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <title>Login</title>
+     <meta charset="UTF-8">
+     <link rel="stylesheet" href="style.css">
+<script ="text/javascript">
+    function init(){
+        login();
+    }
+
+    function login(){
+        var loginForm = document.querySelector("form[name='loginForm']");
+        loginForm.login.addEventListener('click', function( evt ){
+        evt.preventDefault();
+        var verify = document.getElementById("verify");
+        var username = loginForm.username.value;
+        var password = loginForm.password.value;
+        var url = "login.php";
+        var query = "username="+username+"&password="+password;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+        if(xhr.readyState !=4) return;
+        if(xhr.status == 200 || xhr.status == 400){
+         console.log(xhr.responseText);
+        if(xhr.responseText == 0){
+            verify.innerHTML = "Username and Password does not match";
+        }
+        if(xhr.responseText == 1){
+        window.location.replace('index.html');
+        //verify.innerHTML = "Username and Password match";
+        }
+    }
+    else{
+    }
+    };
+    xhr.send(query);
+    });
+    }
+
+
+ </script>
+</head>
+<body onload="init()">
+    <div class="div_class">
+        <h1>Welcome to Sudoku</h1>
+        <h2 style="text-align:center">Login</h2>
+        <form name="loginForm">
+            <center>
+                <label for="username">Username</label>
+                <input id="username" name="username" class="input"><br>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" class="input"><br>
+                        <button class="button" name="login">Login</button><br><br><br>
+                        <p id="verify" style="color:red;"></p>
+                        <p>Don't have an Account?</p>
+                        <a class="a" href="createaccount.html">Create Account</a>
+                        
+            </center>
+        </form>
+    </div>
+</body>
+</html>
+

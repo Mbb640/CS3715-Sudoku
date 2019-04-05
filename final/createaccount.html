@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+  <title>Create Account</title>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="style.css">
+  <script type="text/javascript">
+    function init(){
+    createAccount();
+    }
+    function createAccount(){
+    var createAccountForm = document.querySelector("form[name='createAccountForm']");
+    var usernameValidation = document.getElementById("usernameValidation");
+    var confirmation = document.getElementById("confirmation");
+    var login = document.getElementById("login");
+    createAccountForm.createaccount.addEventListener('click', function( evt ){
+    evt.preventDefault();
+    var username = createAccountForm.username.value;
+    var password = createAccountForm.password.value;
+    var fname = createAccountForm.fname.value;
+    var lname = createAccountForm.lname.value;
+    var url = "createaccount.php";
+    var query = "username="+username+"&password="+password+"&fname="+fname+"&lname="+lname;
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+    if(xhr.readyState !=4) return;
+    if(xhr.status == 200 || xhr.status == 400){
+         console.log(xhr.responseText);
+        if(xhr.responseText == 1){
+            usernameValidation.innerHTML = "username already taken";
+                                                     
+        }
+        if(xhr.responseText == 0){
+            confirmation.innerHTML = "Account Successfully Created";
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("fname").value = "";
+            document.getElementById("lname").value = "";
+        }
+    }
+    else{
+    }
+    
+    };
+    xhr.send(query);
+
+    
+    });
+    }
+  </script>
+</head>
+<body onload="init()">
+<div class="div_class">
+    <h2>Create Account</h2>
+    <form name="createAccountForm">
+    
+        <label for="username">Username</label>
+        <input class="input" id="username" name="username">
+        <span id="usernameValidation" name="usernameValidation" style="text-align:right;"></span>
+        <br>
+        <label for="password">Password</label>
+        <input class="input" type="password" id="password" name="password"><br>
+        <label for="fname">First Name</label>
+        <input class="input" id="fname" name="fname"><br>
+        <label for="lname">Last Name</label>
+        <input class="input" id="lname" name="lname"><br>
+        <button class="button" name="createaccount">Create Account</button><br>
+        <span id="confirmation"></span><br>
+        <a class="a" href="login.html">Login</a>
+
+
+    </form>
+</div>
+</body>
+</html>
